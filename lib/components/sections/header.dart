@@ -1,3 +1,4 @@
+import 'package:alubank/themes/theme_colors.dart';
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
@@ -11,11 +12,7 @@ class Header extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: <Color>[
-            Color.fromRGBO(103, 99, 234, 1.0),
-            Color.fromRGBO(155, 105, 254, 1.0),
-            Color.fromRGBO(195, 107, 255, 1.0)
-          ]
+          colors: ThemeColors.headerGradient,
         )
       ),
       child: Padding(
@@ -29,19 +26,15 @@ class Header extends StatelessWidget {
                 Text.rich(
                   TextSpan(
                     text: '\$',
-                    style: TextStyle(fontSize: 16),
                     children: [
                       TextSpan(
                         text: '1000.00',
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ],
                   ),
                 ),
-                Text('Balanço Diponível', style: TextStyle(fontSize: 16)),
+                Text('Balanço Disponível',),
               ],
             ),
             Icon(Icons.account_circle, size: 42),
